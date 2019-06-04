@@ -18,14 +18,14 @@ else {
 			}
 			catch {exit 3}
 		}
-		$ipmi_ip_ping = @($ipmi_ip_list | Where-Object { Test-Connection -ComputerName $_ -Quiet -Count 1})
-		if ($ipmi_ip_ping.count -ne $ipmi_ip_list.count) {
-			exit 4
-		}
-		else {
-			if(!(Test-Connection -ComputerName $env:ipmi_gw -Quiet -Count )) {
-				exit 5
-			}
-		}
+#		$ipmi_ip_ping = @($ipmi_ip_list | Where-Object { Test-Connection -ComputerName $_ -Quiet -Count 1})
+#		if ($ipmi_ip_ping.count -ne $ipmi_ip_list.count) {
+#			exit 4
+#		}
+#		else {
+#			if(!(Test-Connection -ComputerName $env:ipmi_gw -Quiet -Count )) {
+#				exit 5
+#			}
+#		}
 	}
 }
