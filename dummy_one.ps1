@@ -15,8 +15,8 @@ if ($ipmi_ips.count -ne ($ipmi_ips | sort -unique).count) {
 }
 else {
 	if ($ipmi_ips.count -lt 3) {
-		exit 3
 		write-host "less than three"
+		exit 3		
 	}
 	else {
 		foreach ($ip in $ipmi_ips) {
@@ -28,10 +28,12 @@ else {
 		}
 #		$ipmi_ip_ping = @($ipmi_ipst | Where-Object { Test-Connection -ComputerName $_ -Quiet -Count 1})
 #		if ($ipmi_ip_ping.count -ne $ipmi_ips.count) {
+#			write-host "not all ping"
 #			exit 5
 #		}
 #		else {
 #			if(!(Test-Connection -ComputerName $env:ipmi_gw -Quiet -Count )) {
+#				write-host "gw doesn't ping"
 #				exit 6
 #			}
 #		}
