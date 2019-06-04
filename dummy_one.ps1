@@ -14,7 +14,7 @@ if ($ipmi_ips.count -ne ($ipmi_ips | sort -unique).count) {
 	exit 1
 }
 else {
-	if ($ipmi_ips -lt 3) {
+	if ($ipmi_ips.count -lt 3) {
 		exit 2
 		write-host "less than three"
 	}
