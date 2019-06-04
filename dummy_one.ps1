@@ -10,15 +10,18 @@ write-host $ipmi_ips.count
 write-host ($ipmi_ips | sort -unique).count
 
 if ($ipmi_ips.count -ne ($ipmi_ips | sort -unique).count) {
+	write-host "not_equal"
 	exit 1
 }
 else {
 	if ($ipmi_ips -lt 3) {
 		exit 2
+		write-host "less than three"
 	}
 	else {
 		foreach ($ip in $ipmi_ips) {
 			try {
+				write-host "try ip"
 				[ipaddress]$ip
 			}
 			catch {exit 3}
