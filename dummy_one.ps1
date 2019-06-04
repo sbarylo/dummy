@@ -4,6 +4,10 @@ write-host $env:ipmi_ip_list
 start-sleep -s 15
 
 $ipmi_ips = $env:ipmi_ip_list.split(',')
+write-host $ipmi_ips
+write-host ($ipmi_ips | sort -unique)
+write-host $ipmi_ips.count
+write-host ($ipmi_ips | sort -unique).count
 
 if ($ipmi_ips.count -ne ($ipmi_ips | sort -unique).count) {
 	exit 1
