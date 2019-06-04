@@ -10,7 +10,7 @@ write-host $ipmi_ips.count
 write-host ($ipmi_ips | sort -unique).count
 
 if ($ipmi_ips.count -ne ($ipmi_ips | sort -unique).count) {
-	exit 2
+	exit 1
 }
 else {
 	if ($ipmi_ips -lt 3) {
@@ -34,3 +34,5 @@ else {
 #		}
 	}
 }
+
+exit 0
