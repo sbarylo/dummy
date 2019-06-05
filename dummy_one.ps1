@@ -1,5 +1,5 @@
 write-host $PSversionTable.PSVersion
-write-host $env:body
+write-host $env:change_number $env:location $env:body
 
 start-sleep -s 15
 
